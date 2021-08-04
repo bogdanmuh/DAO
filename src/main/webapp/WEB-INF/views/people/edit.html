@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns :th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update person</title>
+</head>
+<body>
+<!--Если мы берем th:method то thymeleaf сам создаст скрытое поле -->
+<!-- Скрытое поле нужно для создания  PAATHC ,PUT<,...-запросов -->
+<!-- Функцианал HTML  не позвалеяет пользоваться все методами HTTP для общение в сети  кроме GET,POST-->
+  <form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object = "${person}">
+<!-- th:object-нужен для того чтобы в момент вхождения на страницу поле *{name} было заполнено -->
+    <label for ="name">Enter name</label>
+    <input type="text" th:field ="*{name}" id="name"/>
+    <br>
+    <input type="submit" value="Update!"/>
+  </form>
+</body>
+</html>

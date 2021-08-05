@@ -9,15 +9,15 @@ public class Person {
 
     private  int id ;
 
-    @NotEmpty(message ="name should not be empty")
-    @Size(min =2,max =30 ,message="name should be between 2 and 30 characters" )
+    @NotEmpty(message ="Name should not be empty")
+    @Size(min =2,max =30 ,message="Name should be between 2 and 30 characters" )
     private String name ;
 
-    @Min(value = 0,message = "age shouid greater than 0")
+    @Min(value = 0,message = "Age shouid greater than 0")
     private  int  age ;
 
-    @NotEmpty(message ="email should not be empty")
-    @Email(message ="email should be valid ")
+    @NotEmpty(message ="Email should not be empty")
+    @Email(message ="Email should be valid ")
     private  String email;
 
     public Person() { }
